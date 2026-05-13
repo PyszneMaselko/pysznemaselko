@@ -2,7 +2,8 @@
 <html lang="pl"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Optyk Premium Bogucki – Salon optyczny Wrocław</title>
+<title>Optyk Premium Bogucki – Salon optyczny Brwinów</title>
+<link rel="icon" type="image/png" href="assets/images/MiniLogoOptykPremium.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
@@ -55,7 +56,7 @@
     </div>
 
     <!-- Featured review -->
-    <div style="border:1px solid var(--ink-10);border-radius:3px;padding:16px 20px;background:white;opacity:0;animation:fadeUp .6s var(--ease-out) .88s forwards;margin-top:20px;">
+    <div class="hero-review" style="border:1px solid var(--ink-10);border-radius:3px;padding:16px 20px;background:white;opacity:0;animation:fadeUp .6s var(--ease-out) .88s forwards;margin-top:20px;">
       <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">
         <div style="width:34px;height:34px;border-radius:50%;background:var(--cream-2);border:1px solid var(--ink-10);display:flex;align-items:center;justify-content:center;font-size:13px;font-family:var(--serif);color:var(--ink-60);">A</div>
         <div>
@@ -71,7 +72,7 @@
     </div>
 
     <!-- Scroll indicator -->
-    <div style="display:flex;align-items:center;gap:10px;opacity:0;animation:fadeUp .5s var(--ease-out) 1s forwards;">
+    <div class="hero-scroll" style="display:flex;align-items:center;gap:10px;opacity:0;animation:fadeUp .5s var(--ease-out) 1s forwards;">
       <div style="width:1px;height:32px;background:var(--ink-10);"></div>
       <span style="font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-30);font-family:var(--sans);">Przewiń, aby zobaczyć ofertę</span>
     </div>
@@ -154,10 +155,10 @@
     </div>
     <!-- Naprawa okularów -->
     <div class="reveal reveal-delay-1 svc-card"
-      onmouseenter="this.style.boxShadow='0 12px 36px rgba(28,25,23,.09)';"
-      onmouseleave="this.style.boxShadow='';">
+      onmouseenter="this.style.boxShadow='0 12px 36px rgba(28,25,23,.09)';var i=this.querySelector('img');if(i)i.style.transform='scale(1.05)';"
+      onmouseleave="this.style.boxShadow='';var i=this.querySelector('img');if(i)i.style.transform='';">
       <div style="height:180px;overflow:hidden;background:var(--cream-2);display:flex;align-items:center;justify-content:center;">
-        <svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="rgba(28,25,23,.2)" stroke-width=".9" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"></path></svg>
+        <img src="assets/images/Oprawkiserwis.png" alt="Badanie wzroku" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s var(--ease-out);">
       </div>
       <div class="svc-card-text">
         <div class="svc-eyebrow">Usługa</div>

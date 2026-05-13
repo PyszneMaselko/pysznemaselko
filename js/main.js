@@ -140,6 +140,31 @@ faces.forEach((f, i) => {
 });
 setFace(0);
 
+/* ─── Frames row: wheel + drag scroll ── */
+framesRowEl.addEventListener('wheel', (e) => {
+  if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+    e.preventDefault();
+    framesRowEl.scrollLeft += e.deltaY;
+  }
+}, { passive: false });
+
+let dragActive = false, dragStartX = 0, dragScrollStart = 0;
+framesRowEl.addEventListener('mousedown', (e) => {
+  dragActive = true;
+  dragStartX = e.clientX;
+  dragScrollStart = framesRowEl.scrollLeft;
+  framesRowEl.classList.add('is-dragging');
+  e.preventDefault();
+});
+document.addEventListener('mouseup', () => {
+  dragActive = false;
+  framesRowEl.classList.remove('is-dragging');
+});
+document.addEventListener('mousemove', (e) => {
+  if (!dragActive) return;
+  framesRowEl.scrollLeft = dragScrollStart - (e.clientX - dragStartX);
+});
+
 /* ─── Brands track ────────────────────── */
 const brands = [
   { name: 'Ray-Ban',         bg: 'assets/images/brands_themes/rayban_bg.webp',               logo: 'assets/images/brands/Rayban-white.webp' },
